@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <title>Deepak Kumar Singh</title>
+
+  <link rel="shortcut icon" href="./assets/images/Logo.png" type="image/x-icon">
+  <style>
+    :root {
+  /** colors */
+  --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+  --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+  
+  --jet: hsl(0, 0%, 22%);
+  --onyx: hsl(240, 1%, 17%);
+  --white-1: hsl(0, 0%, 100%);
+  --orange-yellow-crayola: hsl(45, 100%, 72%);
+
+  --ff-poppins: 'Poppins', sans-serif;
+  --fs-1: 24px;
+  --fs-2: 18px;
+
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+  --transition-1: 0.25s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-poppins);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--bg-gradient-onyx);
+  overflow: hidden;
+  position: relative;
+}
+
+.thank-you-container {
+  text-align: center;
+  color: var(--white-1);
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  z-index: 10;
+  position: relative;
+  box-shadow: var(--shadow-1);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: bounceIn 1.5s ease-out;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.thank-you-image {
+  width: 45%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.text-content {
+  text-align: left;
+  flex: 1;
+}
+
+.text-content h1 {
+  font-size: var(--fs-1);
+  margin-bottom: 20px;
+  background: var(--text-gradient-yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textFadeIn 2s ease;
+}
+
+.text-content p {
+  font-size: var(--fs-2);
+  margin-bottom: 30px;
+}
+
+.text-content .back-home {
+  text-decoration: none;
+  color: var(--orange-yellow-crayola);
+  background: var(--onyx);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background var(--transition-1);
+}
+
+.text-content .back-home:hover {
+  background: var(--jet);
+}
+
+canvas#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Keyframe animations */
+
+/* Bounce-in effect for the container */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-50px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Smooth fade-in for the text */
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .thank-you-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 70%;
+  }
+
+  .text-content {
+    text-align: center;
+  }
+}
+
+/*-----------------------------------*\
+  #RESPONSIVE
+\*-----------------------------------*/
+
+  /* skills*/
+  @media (max-width: 600px) {
+    .thank-you-container {
+        margin: 25px;
+    }
+    .text-content{
+        margin-bottom: 25px;
+    }
+    .text-content p{
+        margin-bottom: 35px;
+    }
+  }
+
+/*
+responsive larger than 450px screen
+*/
+
+@media (min-width: 450px) {
+    .thank-you-container {
+        margin: 20px;
+    }
+    .text-content{
+        margin-bottom: 25px;
+    }
+    .text-content p{
+        margin-bottom: 35px;
+    }
+}
+/**
+* responsive larger than 580px screen
+*/
+
+@media (min-width: 580px) {
+
+    .thank-you-container {
+        margin: 30px;
+    }
+    .text-content{
+        margin-bottom: 25px;
+    }
+    .text-content p{
+        margin-bottom: 35px;
+    }
+
+}
+
+/**
+* responsive larger than 768px screen
+*/
+
+@media (min-width: 768px) {
+    .thank-you-container {
+        margin: 20px;
+    }
+    .text-content{
+        margin-bottom: 25px;
+    }
+    .text-content p{
+        margin-bottom: 35px;
+    }
+}
+
+  </style>
+</head>
+<body>
+    <div class="thank-you-container">
+  <div class="content-wrapper">
+    <img src="./assets/images/thx.png" alt="Thank You Image" class="thank-you-image">
+    <div class="text-content">
+      <h1>Thank You!</h1>
+      <p>Your submission has been received successfully. We’ll be in touch shortly.</p>
+      <a href="#" class="back-home">Back to Home</a>
+    </div>
+  </div>
+</div>
+
+    <canvas id="background"></canvas>
+    <script>
+        const canvas = document.getElementById('background');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particlesArray;
+
+// Mouse position
+let mouse = {
+    x: null,
+    y: null
+};
+window.addEventListener('mousemove', function(event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+});
+
+// Particle constructor
+class Particle {
+    constructor(x, y, size, color) {
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.color = color;
+        this.baseX = this.x;
+        this.baseY = this.y;
+        this.density = (Math.random() * 30) + 1;
+    }
+    draw() {
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+    }
+    update() {
+        let dx = mouse.x - this.x;
+        let dy = mouse.y - this.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        let forceDirectionX = dx / distance;
+        let forceDirectionY = dy / distance;
+        let maxDistance = 100;
+        let force = (maxDistance - distance) / maxDistance;
+        let directionX = forceDirectionX * force * this.density;
+        let directionY = forceDirectionY * force * this.density;
+
+        if (distance < 100) {
+            this.x -= directionX;
+            this.y -= directionY;
+        } else {
+            if (this.x !== this.baseX) {
+                let dx = this.x - this.baseX;
+                this.x -= dx / 10;
+            }
+            if (this.y !== this.baseY) {
+                let dy = this.y - this.baseY;
+                this.y -= dy / 10;
+            }
+        }
+    }
+}
+
+// Initialize particles
+function init() {
+    particlesArray = [];
+    let numberOfParticles = (canvas.width * canvas.height) / 9000;
+    for (let i = 0; i < numberOfParticles; i++) {
+        let size = (Math.random() * 5) + 1;
+        let x = (Math.random() * canvas.width);
+        let y = (Math.random() * canvas.height);
+        let color = 'rgba(255, 255, 255, 0.8)';
+        particlesArray.push(new Particle(x, y, size, color));
+    }
+}
+
+// Animation loop
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+    }
+    requestAnimationFrame(animate);
+}
+
+// Resize event
+window.addEventListener('resize', function() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    init();
+});
+
+// Mouse out event
+window.addEventListener('mouseout', function() {
+    mouse.x = undefined;
+    mouse.y = undefined;
+});
+
+init();
+animate();
+
+    </script>
+</body>
+</html>
